@@ -21,5 +21,43 @@
     ></script>
     <title>Password Validator</title>
   </head>
-  <body></body>
+  <body>
+    <div id="app">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-6 my-5">
+            <password-helper inline-template>
+              <div class="form-group mb-3">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Password"
+                  v-model="password"
+                />
+                <small id="passwordHelp" class="form-text" text-muted
+                  >Password should contain
+                  <span :class="has_minimum_length ? 'has_required' : ''"
+                    >at least 8 characters</span
+                  >,
+                  <span :class="has_lowercase ? 'has_required' : ''"
+                    >one lowercase letter</span
+                  >,
+                  <span :class="has_uppercase ? 'has_required' : ''"
+                    >one uppercase letter</span
+                  >,
+                  <span :class="has_number ? 'has_required' : ''"
+                    >One number</span
+                  >,
+                  <span :class="has_special ? 'has_required' : ''"
+                    >one special character.</span
+                  >
+                </small>
+              </div>
+            </password-helper>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
