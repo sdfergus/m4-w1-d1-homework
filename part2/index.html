@@ -59,5 +59,20 @@
         </div>
       </div>
     </div>
+    <script>
+      Vue.component('password-helper', {
+        data() {
+          return {
+            password: '',
+            has_minimum_length: false,
+            has_number: false,
+            has_lowercase: false,
+            has_uppercase: false,
+            has_special: false,
+          };
+        },
+        watch: {},
+      });
+    </script>
   </body>
 </html>
