@@ -71,7 +71,15 @@
             has_special: false,
           };
         },
-        watch: {},
+        watch: {
+          password() {
+            this.has_minimum_length = this.password.length > 8;
+            this.has_number = /\d/.test(this.password);
+            this.has_lowercase = /[a-z]/.test(this.password);
+            this.has_uppercase = /[A-Z]/.test(this.password);
+            this.has_special = /[!@#\$%\^\&*\)\(+=._-]/.test(this.password);
+          },
+        },
       });
     </script>
   </body>
