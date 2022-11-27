@@ -20,6 +20,13 @@
       crossorigin="anonymous"
     ></script>
     <title>Password Validator</title>
+
+    <style>
+      .has_required {
+        text-decoration: line-through;
+        color: #689868;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
@@ -80,6 +87,9 @@
             this.has_special = /[!@#\$%\^\&*\)\(+=._-]/.test(this.password);
           },
         },
+      });
+      var app = new Vue({
+        el: '#app',
       });
     </script>
   </body>
